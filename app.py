@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -8,4 +9,8 @@ def get_index():
 
 @app.route("/hello")
 def get_hello():
-    return "<p>Hello There!</p>"
+    return render_template('hello.html', name = "Yassine")
+
+@app.route("/santa")
+def get_santa():
+    return render_template('hello.html', name = "Santa")
